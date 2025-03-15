@@ -1,13 +1,35 @@
-# Welcome to your Expo app 👋
+# Project Overview  
+This is a React Native app built using Expo Router. It features:
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- A Biometric Login Screen as the homepage.
+
+- A Transaction History Screen displaying recent transactions.
+
+- A Transaction Detail Screen to view details of a selected transaction.
+
+- The ability to mask/unmask transaction amounts using biometric authentication.
+
+- A pull-to-refresh feature for updating the transaction list.
+
+- Each transaction is pressable, navigating to a detailed transaction screen.
+
+## Installation
+1. Clone the repository
+```bash
+git clone Cassandra-Jacklya/ryt-secure-transaction-history
+```
+
+2. Then go into the project folder of the cloned repository
+```bash
+cd <project-folder>
+```
 
 ## Get started
 
-1. Install dependencies
+1. Install Expo Go
 
    ```bash
-   npm install
+   Google Play / App Store
    ```
 
 2. Start the app
@@ -15,36 +37,32 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
     npx expo start
    ```
+   or (to clear cache)
 
-In the output, you'll find options to open the app in a
+   ```bash
+    npx expo start --clear
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+3. Scan the QR code provided when running the project or enter the URL manually (exp link which can be found in the Expo Go app)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<br/>
 
-## Get a fresh project
+# Troubleshooting
 
-When you're ready, run:
+1. App Not Running?
 
 ```bash
-npm run reset-project
+Ensure you have Expo Go installed.
+
+Check your internet connection.
+
+Restart the app and try again.
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Biometric Authentication Not Working?
 
-## Learn more
+```bash
+Ensure your device supports Face ID / Fingerprint.
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Check if biometrics are enabled in device settings.
+```
