@@ -13,7 +13,7 @@ This is a React Native app built using Expo Router. It features:
 
 - Each transaction is pressable, navigating to a detailed transaction screen.
 
-## Pre-Requisite (For IOS)
+## Pre-Requisite
 1. Install Node.js
 Download and install Node.js (LTS version) from:
 ```bash
@@ -27,7 +27,7 @@ Download and install Git from:
 🔗 https://git-scm.com/downloads
 ```
 
-## Get Started (IOS)
+## Get Started
 <i>Because I don't have an Apple account so I am not able to build for ios</i>
 
 1. Go to your terminal
@@ -73,8 +73,8 @@ npm install
 
 <br/>
 
-## Get started (Android)
-<i>*This is for Android only</i>
+## Get started (only for Android)
+<i>*This is because I can only build for Android as I don't have an Apple account</i>
 
 1. Install Expo Go (on your Android Phone)
 
