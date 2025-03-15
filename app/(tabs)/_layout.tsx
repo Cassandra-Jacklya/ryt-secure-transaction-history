@@ -35,7 +35,7 @@ export default function BiometricLoginScreen() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "white", // Apply background color to entire screen
+        backgroundColor: Colors[theme].background, // Apply background color to entire screen
         padding: 20,
       }}
     >
@@ -57,11 +57,11 @@ export default function BiometricLoginScreen() {
         style={{
           paddingVertical: 12,
           paddingHorizontal: 30,
-          backgroundColor: Colors[theme].background, // Use theme tint color
+          backgroundColor: "lightgrey", // Use theme tint color
           borderRadius: 8,
         }}
       >
-        <Text style={{ color: "white", fontSize: 15, fontWeight: "bold" }}>
+        <Text style={{ color: Colors[theme].primary, fontSize: 15, fontWeight: "bold" }}>
           Login with Biometrics
         </Text>
       </TouchableOpacity>

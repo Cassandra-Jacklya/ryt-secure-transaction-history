@@ -1,9 +1,10 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet, Alert, TouchableOpacity, RefreshControl } from "react-native";
+import { View, Text, FlatList, StyleSheet, Alert, TouchableOpacity, RefreshControl, useColorScheme } from "react-native";
 import { transactions } from "../constants/transactionData"; // Import JSON data
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useRouter, useNavigation } from "expo-router";
+import { Colors } from "../constants/Colors";
 
 export default function TransactionHistoryScreen() {
 
@@ -11,8 +12,11 @@ export default function TransactionHistoryScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const router = useRouter();
   const nav = useNavigation();
+  const theme = useColorScheme() ?? "light";
 
-  nav.setOptions({title: "Transaction History"});
+  useEffect(() => {
+    nav.setOptions({ title: "Transactions" });
+  }, [nav]); // Runs only when `navigation` changes
 
   const authenticateUser = async () => {
     const result = await LocalAuthentication.authenticateAsync({
@@ -43,13 +47,13 @@ export default function TransactionHistoryScreen() {
           <TouchableOpacity
             onPress={() => router.push(`/transaction-details?id=${item.id}&amount=${item.amount}&date=${item.date}&description=${item.description}&type=${item.type}`)}
               style={{
-                backgroundColor: "white",
+                backgroundColor: theme === "dark" ? "#F0F0F0" : "white",
                 marginBottom: 10,
                 borderRadius: 8,
               }}
           >
-            <View style={{ padding: 15, backgroundColor: "white", marginBottom: 10, borderRadius: 8 }}>
-              <Text style={{ fontSize: 16, fontWeight: "bold" }}>{item.description}</Text>
+            <View style={{ padding: 15, backgroundColor: Colors[theme].background, marginBottom: 10, borderRadius: 8 }}>
+              <Text style={{ fontSize: 16, fontWeight: "bold", color: Colors[theme].text }}>{item.description}</Text>
               <Text style={{ fontSize: 14, color: "gray" }}>{item.date}</Text>
               <Text style={{ fontSize: 16, fontWeight: "bold", color: item.type === "credit" ? "green" : "red" }}>
                 {masked ? "****" : `RM ${item.amount.toFixed(2)}`}
