@@ -5,22 +5,23 @@
 
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
+const primaryColour = '#0000E6';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    text: '#0A0A0A',        // Almost black for maximum readability
+    background: primaryColour,  // Pure white background for a clean look
+    primary: primaryColour,     // Your deep blue as the primary color
+    icon: '#333333',        // Darker grey for better contrast
+    tabIconDefault: '#666666', // Neutral grey for inactive tabs
+    tabIconSelected: '#0000E6', // Deep blue for active tabs (consistent with primary)
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: '#F1F1F1',        // Soft white for readability without being harsh
+    background: '#121212',  // Dark grey for better eye comfort (not pure black)
+    primary: '#4C6EF5',     // Softer blue that complements dark mode
+    icon: '#C4C4C4',        // Light grey for better visibility on dark backgrounds
+    tabIconDefault: '#888888', // Muted grey for inactive tabs
+    tabIconSelected: '#4C6EF5', // Softer blue for active tabs in dark mode
   },
 };
