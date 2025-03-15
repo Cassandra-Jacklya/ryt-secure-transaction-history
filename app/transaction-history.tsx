@@ -3,13 +3,16 @@ import { View, Text, FlatList, StyleSheet, Alert, TouchableOpacity, RefreshContr
 import { transactions } from "../constants/transactionData"; // Import JSON data
 import { useState, useCallback } from "react";
 import * as LocalAuthentication from "expo-local-authentication";
-import { useRouter } from "expo-router";
+import { useRouter, useNavigation } from "expo-router";
 
 export default function TransactionHistoryScreen() {
 
   const [masked, setMasked] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const router = useRouter();
+  const nav = useNavigation();
+
+  nav.setOptions({title: "Transaction History"});
 
   const authenticateUser = async () => {
     const result = await LocalAuthentication.authenticateAsync({
@@ -32,8 +35,6 @@ export default function TransactionHistoryScreen() {
 
   return (
     <View style={{ flex: 1, padding: 20, backgroundColor: "#f5f5f5" }}>
-      <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: 20 }}>Transaction History</Text>
-
       <FlatList
         data={transactions}
         keyExtractor={(item) => item.id.toString()}

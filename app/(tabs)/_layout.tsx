@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TouchableOpacity, Alert, useColorScheme } from "react-native";
 import { useRouter } from "expo-router";
 import * as LocalAuthentication from "expo-local-authentication";
 import { useAuth } from "@/context/AuthContext";
+import { Colors } from "../../constants/Colors";
 
 export default function BiometricLoginScreen() {
-  const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const { setIsAuthenticated } = useAuth();
   const router = useRouter();
+  const theme = useColorScheme() ?? "light";
 
   const authenticateUser = async () => {
     const hasHardware = await LocalAuthentication.hasHardwareAsync();
@@ -29,10 +30,40 @@ export default function BiometricLoginScreen() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontSize: 20, marginBottom: 20 }}>Biometric Login</Text>
-      <TouchableOpacity onPress={authenticateUser} style={{ padding: 15, backgroundColor: "blue", borderRadius: 5 }}>
-        <Text style={{ color: "white" }}>Login with Biometrics</Text>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white", // Apply background color to entire screen
+        padding: 20,
+      }}
+    >
+      {/* App Title */}
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: "bold",
+          marginBottom: 20,
+          color: Colors[theme].text, // Dynamic text color
+        }}
+      >
+        Transaction History App
+      </Text>
+
+      {/* Login Button */}
+      <TouchableOpacity
+        onPress={authenticateUser}
+        style={{
+          paddingVertical: 12,
+          paddingHorizontal: 30,
+          backgroundColor: Colors[theme].background, // Use theme tint color
+          borderRadius: 8,
+        }}
+      >
+        <Text style={{ color: "white", fontSize: 15, fontWeight: "bold" }}>
+          Login with Biometrics
+        </Text>
       </TouchableOpacity>
     </View>
   );
