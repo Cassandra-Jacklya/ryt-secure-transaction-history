@@ -13,26 +13,33 @@ This is a React Native app built using Expo Router. It features:
 
 - Each transaction is pressable, navigating to a detailed transaction screen.
 
-## Installation
-1. Clone the repository
+## Get Started (IOS)
+<i>Because I don't have an Apple account so I am not able to build for ios</i>
+
+1. Go to your terminal
+
+2. Go to a directory that you want to clone the repository in
 ```bash
-git clone Cassandra-Jacklya/ryt-secure-transaction-history
+cd <path>
 ```
 
-2. Then go into the project folder of the cloned repository
+3. Clone the repository
+```bash
+git clone https://github.com/Cassandra-Jacklya/ryt-secure-transaction-history.git
+```
+
+4. Then go into the project folder of the cloned repository
 ```bash
 cd <project-folder>
 ```
 
-## Get started
-
-1. Install Expo Go
+5. Install Expo Go
 
    ```bash
    Google Play / App Store
    ```
 
-2. Start the app
+6. Start the app (on terminal, make sure you are in the project directory)
 
    ```bash
     npx expo start
@@ -43,9 +50,24 @@ cd <project-folder>
     npx expo start --clear
    ```
 
-3. Scan the QR code provided when running the project or enter the URL manually (exp link which can be found in the Expo Go app)
+7. Scan the QR code provided using your phone when running the project or enter the URL manually (exp link which can be found in the Expo Go app)
 
 <br/>
+
+## Get started (Android)
+<i>*This is for Android only</i>
+
+1. Install Expo Go (on your Android Phone)
+
+   ```bash
+   Google Play / App Store
+   ```
+
+2. Go to this link and download the APK
+
+   ```bash
+   https://expo.dev/accounts/cassandraj/projects/ryt-assessment/builds/8fea811d-c210-4459-8f9f-b2fbfd98446a 
+   ```
 
 # Troubleshooting
 
