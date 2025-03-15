@@ -10,7 +10,7 @@ const primaryColour = '#0000E6';
 export const Colors = {
   light: {
     text: '#0A0A0A',        // Almost black for maximum readability
-    background: primaryColour,  // Pure white background for a clean look
+    background: "E0E0E0",  // Pure white background for a clean look
     primary: primaryColour,     // Your deep blue as the primary color
     icon: '#333333',        // Darker grey for better contrast
     tabIconDefault: '#666666', // Neutral grey for inactive tabs
